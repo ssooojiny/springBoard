@@ -177,6 +177,13 @@
            <artifactId>imgscalr-lib</artifactId>
            <version>4.2</version>  
            </dependency>
+           
+         <!-- 조회수 처리를 위한 트랜잭션 라이브러리 -->
+         <dependency>
+         	<groupId>org.springframework</groupId>
+         	<artifactId>spring-tx</artifactId>
+         	<version>${org.springframework-version}</version>
+         </dependency>
         
    </dependencies>
     <build>

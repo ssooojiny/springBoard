@@ -19,20 +19,48 @@
 
 </head>
 <body>
-
-	<label>제목</label>
-	${view.title}<br />
+	<div class="container">
+		<div>
+			<header>
+				<%@include file="../include/header.jsp" %>
+			</header>
+			<hr />
+			<nav>
+				<%@include file="../include/nav.jsp" %>
+			</nav>
+		</div>
+		
+		<hr />
+		
+			<label class="col-sm-2 control-label">제목</label>
+			<div class="col-sm-10">
+				<input type="text" name="title" class="form-control" value="${view.title }" readOnly="readOnly"/>
+			</div>
+			<br>
+				
+			<label class="col-sm-2 control-label">작성자</label>
+			<div class="col-sm-10">
+				<input type="text" name="writer" class="form-control" value="${view.writer }" readOnly="readOnly"/>
+			</div>
+			<br>
+			
+			<label class="col-sm-2 control-label">내용</label> 
+			<div class="col-sm-10">
+				<textarea cols="50" rows="5" name="content" class="form-control" readOnly="readOnly">${view.content }</textarea>
+			<br />
+			</div>
+			
+			<div class="">
+				<button type="button" class="btn btn-primary"><a href="/board/modify?bno=${view.bno}" style="color:white;">게시물 수정</a></button>
+				<button type="button" class="btn btn-warning"><a href="/board/delete?bno=${view.bno}" style="color:white;">게시물 삭제</a></button>
+			</div>
 	
-	<label>작성자</label>
-	${view.writer}<br />
+		<hr />
 	
-	<label>내용</label><br />
-	${view.content}<br />
+	<footer>
+		<%@include file="../include/footer.jsp" %>
+	</footer>
 
-<div>
-<a href="/board/modify?bno=${view.bno}">게시물 수정</a>
-<a href="/board/delete?bno=${view.bno}">게시물 삭제</a>
-</div>
-
+	</div>
 </body>
 </html>

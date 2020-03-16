@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +24,7 @@
 			<tr>
 				<td>${list.bno }</td>
 				<td><a href="/board/view?bno=${list.bno }">${list.title }</a></td>
-				<td>${list.regDate }</td>
+				<td><fmt:formatDate value="${list.regDate }" pattern="yyyy-MM-dd"/></td>
 				<td>${list.writer }</td>
 				<td>${list.viewCnt }</td>
 			</tr>

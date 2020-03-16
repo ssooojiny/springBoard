@@ -19,16 +19,44 @@
 
 </head>
 <body>
+	<div class="container">
+		<div>
+			<header>
+				<%@include file="../include/header.jsp" %>
+			</header>
+			<hr />
+			<nav>
+				<%@include file="../include/nav.jsp" %>
+			</nav>
+		</div>
+		
+		<hr />
+		
+		<div class="form-group">
+			<form method="post">
+				<label class="col-sm-2 control-label">제목</label>
+				<div class="col-sm-10">
+					<input type="text" name="title" class="form-control" value="${view.title }"/>
+				</div> <br/>
+				
+				<label class="col-sm-2 control-label">작성자</label>
+				<div class="col-sm-10">
+					<input type="text" name="writer"class="form-control" value="${view.writer }"/>
+				</div><br />
+				
+				<label class="col-sm-2 control-label">내용</label>
+				<div class="col-sm-10">
+					<textarea cols="50" rows="5" name="content" class="form-control">${view.content }</textarea><br />
+				</div> 
+				<div>
+					<button type="submit"  class="btn btn-warning">수정</button>
+				</div>
+			</form>
+		</div>	
+	<footer>
+		<%@include file="../include/footer.jsp" %>
+	</footer>
 
-<form method="post">
-	<label>제목</label>
-	<input type="text" name="title" value="${view.title }"/> <br/>
-	<label>작성자</label>
-	<input type="text" name="writer" value="${view.writer }"/><br />
-	<label>내용</label> 
-	<textarea cols="50" rows="5" name="content">${view.content }</textarea><br />
-	<button type="submit">수정</button>
-</form>
-
+	</div>
 </body>
 </html>

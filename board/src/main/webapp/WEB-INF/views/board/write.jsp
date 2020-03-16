@@ -20,15 +20,54 @@
 </head>
 <body>
 
-<form method="post">
-	<label>제목</label>
-	<input type="text" name="title"/> <br/>
-	<label>작성자</label>
-	<input type="text" name="writer" /><br />
-	<label>내용</label> 
-	<textarea cols="50" rows="5" name="content"></textarea><br />
-	<button type="submit">작성</button>
-</form>
+	<div class="container">
+		<div>
+			<header>
+				<%@include file="../include/header.jsp" %>
+			</header>
+			<hr />
+			<nav>
+				<%@include file="../include/nav.jsp" %>
+			</nav>
+		</div>
+		
+		<hr />
+		
+		<div class="form-group">
+			<form method="post">
+				<label class="col-sm-2 control-label">제목</label>
+				<div class="col-sm-10">
+					<input type="text" name="title" class="form-control"/>
+				</div>
+				
+				<br>
+				
+				<label class="col-sm-2 control-label">작성자</label>
+				<div class="col-sm-10">
+					<input type="text" name="writer" class="form-control" />
+				</div>
+				
+				<br>
+				
+				<label class="col-sm-2 control-label">내용</label> 
+				<div class="col-sm-10">
+					<textarea cols="50" rows="5" name="content" class="form-control"></textarea>
+									<br>
+				</div>
+
+				
+				<div>
+					<button type="submit" class="btn btn-primary">작성</button>
+				</div>
+			</form>
+		</div>
+		<hr />
+	
+		<footer>
+			<%@include file="../include/footer.jsp" %>
+		</footer>
+
+	</div>
 
 </body>
 </html>

@@ -65,9 +65,15 @@ public class BoardController {
 	
 	// 게시물 삭제
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
-	public String getDelete(@RequestParam("bno") int bno) throws Exception {
+	public void getDelete(@RequestParam("bno") int bno, Model model) throws Exception {
+		model.addAttribute("delete",bno);
+	}
+	
+	// 게시물 삭제 POST
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	public String postDelete(@RequestParam("bno") int bno) throws Exception {
 		service.delete(bno);  
-		return "redirect:/board/list";
+		return "redirect:/board/listPage?num=1";
 	}
 	
 	// 게시물 목록 + 페이징 추가
